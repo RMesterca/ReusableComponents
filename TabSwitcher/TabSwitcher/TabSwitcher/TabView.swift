@@ -26,13 +26,15 @@ class TabView: UIView {
         }
     }
 
+    @IBInspectable var xMargin: CGFloat = 10 {
+        didSet { setNeedsLayout() }
+    }
+
     @IBInspectable var isLeftTabView: Bool = false {
         didSet { setNeedsLayout() }
     }
 
-    @IBInspectable var xMargin: CGFloat = 10 {
-        didSet { setNeedsLayout() }
-    }
+    @IBInspectable var segueName: String?
 
     //MARK: Properties
     override class var layerClass: AnyClass {
@@ -100,5 +102,4 @@ class TabView: UIView {
         tabPath.append(roundedRect)
         self.shapeLayer.path = tabPath.cgPath
     }
-
 }

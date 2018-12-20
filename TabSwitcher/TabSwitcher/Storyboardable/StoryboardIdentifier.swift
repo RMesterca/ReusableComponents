@@ -10,6 +10,4 @@ import Foundation
 
 enum StoryboardId: String {
     case TabSwitcherViewController
-    case LeftTabViewController
-    case RightTabViewController
 }

@@ -13,12 +13,11 @@
 		04122E4C21CA59F0002A70A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04122E4A21CA59F0002A70A1 /* LaunchScreen.storyboard */; };
 		04122E5421CA5B79002A70A1 /* TabSwitcher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04122E5321CA5B79002A70A1 /* TabSwitcher.storyboard */; };
 		04122E5621CA5E36002A70A1 /* TabSwitcherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */; };
-		04122E5821CA60B3002A70A1 /* LeftTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122E5721CA60B3002A70A1 /* LeftTabViewController.swift */; };
-		04122E5A21CA60D1002A70A1 /* RightTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122E5921CA60D1002A70A1 /* RightTabViewController.swift */; };
 		04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122E5C21CA6EBA002A70A1 /* TabView.swift */; };
 		045D992821CAB05100ACFB57 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992721CAB05100ACFB57 /* Storyboardable.swift */; };
 		045D992B21CAB14F00ACFB57 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992A21CAB14F00ACFB57 /* StoryboardName.swift */; };
 		045D992D21CAB16600ACFB57 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992C21CAB16600ACFB57 /* StoryboardIdentifier.swift */; };
+		045D993621CB9C6900ACFB57 /* SegueNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D993521CB9C6900ACFB57 /* SegueNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +29,11 @@
 		04122E4D21CA59F0002A70A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04122E5321CA5B79002A70A1 /* TabSwitcher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabSwitcher.storyboard; sourceTree = "<group>"; };
 		04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSwitcherViewController.swift; sourceTree = "<group>"; };
-		04122E5721CA60B3002A70A1 /* LeftTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTabViewController.swift; sourceTree = "<group>"; };
-		04122E5921CA60D1002A70A1 /* RightTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightTabViewController.swift; sourceTree = "<group>"; };
 		04122E5C21CA6EBA002A70A1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		045D992721CAB05100ACFB57 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		045D992A21CAB14F00ACFB57 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		045D992C21CAB16600ACFB57 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		045D993521CB9C6900ACFB57 /* SegueNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +69,7 @@
 				04122E3E21CA59ED002A70A1 /* AppDelegate.swift */,
 				04122E5321CA5B79002A70A1 /* TabSwitcher.storyboard */,
 				045D992921CAB13800ACFB57 /* Storyboardable */,
+				045D993521CB9C6900ACFB57 /* SegueNames.swift */,
 				04122E5B21CA60E3002A70A1 /* TabSwitcher */,
 				04122E4821CA59F0002A70A1 /* Assets.xcassets */,
 				04122E4A21CA59F0002A70A1 /* LaunchScreen.storyboard */,
@@ -84,8 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */,
-				04122E5721CA60B3002A70A1 /* LeftTabViewController.swift */,
-				04122E5921CA60D1002A70A1 /* RightTabViewController.swift */,
 				04122E5C21CA6EBA002A70A1 /* TabView.swift */,
 			);
 			path = TabSwitcher;
@@ -172,14 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04122E5A21CA60D1002A70A1 /* RightTabViewController.swift in Sources */,
 				045D992B21CAB14F00ACFB57 /* StoryboardName.swift in Sources */,
 				04122E4721CA59ED002A70A1 /* TabSwitcher.xcdatamodeld in Sources */,
 				045D992821CAB05100ACFB57 /* Storyboardable.swift in Sources */,
 				045D992D21CAB16600ACFB57 /* StoryboardIdentifier.swift in Sources */,
-				04122E5821CA60B3002A70A1 /* LeftTabViewController.swift in Sources */,
 				04122E5621CA5E36002A70A1 /* TabSwitcherViewController.swift in Sources */,
 				04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */,
+				045D993621CB9C6900ACFB57 /* SegueNames.swift in Sources */,
 				04122E3F21CA59ED002A70A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
