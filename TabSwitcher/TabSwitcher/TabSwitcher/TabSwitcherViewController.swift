@@ -23,50 +23,26 @@ class TabSwitcherViewController: UIViewController {
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        leftTabView.isUserInteractionEnabled = false
-        rightTabView.isUserInteractionEnabled = true
     }
 
     //MARK: Actions
     @IBAction func didPressLeftTab(_ sender: Any) {
-        updateTabViews(frontTab: leftTabView, behindTab: rightTabView,
-                       behindTabAlpha: self.behindTabAlpha, frontTabAlpha: self.frontTabAlpha)
+        print("left")
+        switchTabs(frontTab: leftTabView, behindTab: rightTabView)
     }
 
     @IBAction func didPressRightTab(_ sender: Any) {
-        updateTabViews(frontTab: rightTabView, behindTab: leftTabView,
-                       behindTabAlpha: self.behindTabAlpha, frontTabAlpha: self.frontTabAlpha)
+        print("right")
+        switchTabs(frontTab: rightTabView, behindTab: leftTabView)
     }
 }
 
 //MARK: Container View Helper Methods
 extension TabSwitcherViewController {
-
     fileprivate func switchTabs(frontTab: UIView, behindTab: UIView) {
         self.view.bringSubviewToFront(frontTab)
-//        self.view.sendSubviewToBack(behindTab)
-    }
-
-
-    fileprivate func updateTabViews(frontTab: UIView, behindTab: UIView,
-                                    behindTabAlpha: CGFloat, frontTabAlpha: CGFloat) {
-        switchTabs(frontTab: frontTab, behindTab: behindTab)
-        toggleUserInteraction(frontTab: frontTab, behindTab: behindTab)
-        setViewAlpha(tabViews: [frontTab, behindTab], behindTabAlpha: behindTabAlpha , frontTabAlpha: frontTabAlpha)
-    }
-
-
-    fileprivate func toggleUserInteraction(frontTab: UIView, behindTab: UIView) {
-        frontTab.isUserInteractionEnabled = false
-        behindTab.isUserInteractionEnabled = true
-    }
-
-    fileprivate func setViewAlpha(tabViews: [UIView], behindTabAlpha: CGFloat, frontTabAlpha: CGFloat) {
-        tabViews.forEach { view in
-            let alpha: CGFloat = view.isUserInteractionEnabled ? behindTabAlpha : frontTabAlpha
-            view.alpha = alpha
-        }
+        frontTab.alpha = frontTabAlpha
+        behindTab.alpha = behindTabAlpha
     }
 }
 
