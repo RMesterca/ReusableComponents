@@ -15,6 +15,7 @@ class TabSwitcherViewController: UIViewController {
     @IBOutlet weak var rightTabView: TabView!
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet var tabViewBottomContraints: [NSLayoutConstraint]!
 
     //MARK: Properties
     private var behindTabAlpha: CGFloat = 0.5
@@ -39,6 +40,12 @@ class TabSwitcherViewController: UIViewController {
 
 //MARK: Container View Helper Methods
 extension TabSwitcherViewController {
+
+    fileprivate func checkForTabBar() {
+        
+
+    }
+
     fileprivate func switchTabs(frontTab: UIView, behindTab: UIView) {
         self.view.bringSubviewToFront(frontTab)
         frontTab.alpha = frontTabAlpha

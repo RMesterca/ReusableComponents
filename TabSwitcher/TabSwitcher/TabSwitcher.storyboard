@@ -114,6 +114,7 @@
                         <outlet property="leftTabView" destination="A6i-Fv-t9G" id="0n8-Ok-hHA"/>
                         <outlet property="rightButton" destination="zuV-Cw-b9b" id="0Ap-V7-358"/>
                         <outlet property="rightTabView" destination="xU6-Bq-ehg" id="HrW-ta-y70"/>
+                        <outletCollection property="tabViewBottomContraints" destination="Ilg-vG-mx0" collectionClass="NSMutableArray" id="Ro2-gP-5W2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcc-5E-JNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
