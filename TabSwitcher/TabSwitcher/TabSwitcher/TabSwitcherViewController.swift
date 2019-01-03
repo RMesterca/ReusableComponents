@@ -70,8 +70,8 @@ extension TabSwitcherViewController {
 
         let tabSwitchAnimator = TabSwitchAnimator()
         let zPosition: [CGFloat] = [50, 100]
-        let xPosition = CGPoint(x: 200, y: 0)
-        let xPositionReversed = CGPoint(x: -200, y: 0)
+        let xyPosition = CGPoint(x: 200, y: -20)
+        let xyPositionReversed = CGPoint(x: -200, y: -20)
 
         let alpha = (behindTabAlpha, frontTabAlpha)
         let alphaReversed = (frontTabAlpha, behindTabAlpha)
@@ -87,13 +87,13 @@ extension TabSwitcherViewController {
         tabSwitchAnimator.getAnimationForTab(view: frontTab,
                                              angle: frontAngle,
                                              zPosition: zPosition,
-                                             xPosition: xPosition,
+                                             xyPosition: xyPosition,
                                              alphas: alpha)
         
         tabSwitchAnimator.getAnimationForTab(view: behindTab,
                                              angle: behindAngle,
                                              zPosition: zPosition.reversed(),
-                                             xPosition: xPositionReversed,
+                                             xyPosition: xyPositionReversed,
                                              alphas: alphaReversed)
     }
 }
