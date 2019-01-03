@@ -60,22 +60,22 @@ class TabView: UIView {
         let frame = CGRect(x: bounds.origin.x,
                            y: bounds.origin.y,
                            width: bounds.width/2 + xMargin,
-                           height: bounds.height)
+                           height: tabHeight + cornerRadius)
         return UIBezierPath(
             roundedRect: frame,
-            cornerRadius: cornerRadius
-        )
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
     }
 
     var rightLabelRoundedRect: UIBezierPath {
         let frame = CGRect(x: bounds.width/2 - xMargin,
                            y: bounds.origin.y,
                            width: bounds.width/2 + xMargin,
-                           height: bounds.height)
+                           height: tabHeight + cornerRadius)
         return UIBezierPath(
             roundedRect: frame,
-            cornerRadius: cornerRadius
-        )
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
     }
 
     //MARK: Init

@@ -20,51 +20,80 @@ class TabSwitcherViewController: UIViewController {
     //MARK: Properties
     private var behindTabAlpha: CGFloat = 0.5
     private var frontTabAlpha: CGFloat = 1
-    private var animateDuration: TimeInterval = 2
-    
+
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        leftTabView.alpha = frontTabAlpha
-        rightTabView.alpha = behindTabAlpha
+        setupInitialTabState()
     }
     
+    @IBAction func middleRightButton(_ sender: Any) {
+        print("middle right")
+
+    }
     //MARK: Actions
     @IBAction func didPressLeftTab(_ sender: Any) {
         print("left")
-        scissorTabAnimation(tabViews: [leftTabView, rightTabView])
+        toggleActiveButtons()
+        scissorTabAnimation(frontTab: leftTabView, behindTab: rightTabView)
     }
-    
+
+    @IBAction func middleLeftButton(_ sender: Any) {
+        print("middle left")
+    }
     @IBAction func didPressRightTab(_ sender: Any) {
         print("right")
-        scissorTabAnimation(tabViews: [rightTabView, leftTabView])
+        toggleActiveButtons()
+        scissorTabAnimation(frontTab: rightTabView, behindTab: leftTabView)
+    }
+
+    //MARK: Methods
+    fileprivate func toggleActiveButtons() {
+        leftButton.isUserInteractionEnabled.toggle()
+        rightButton.isUserInteractionEnabled.toggle()
+    }
+
+    fileprivate func setupInitialTabState() {
+        leftTabView.alpha = frontTabAlpha
+        rightTabView.alpha = behindTabAlpha
+
+        leftButton.isUserInteractionEnabled = false
+        rightButton.isUserInteractionEnabled = true
     }
 }
 
 //MARK: Container View Helper Methods
 extension TabSwitcherViewController {
     
-    fileprivate func scissorTabAnimation(tabViews: [TabView]) {
-        
-        var angles: [CGFloat?] = []
-        tabViews.forEach { (view) in
-            let angle = view.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
-            angles.append(angle)
-        }
-        
+    fileprivate func scissorTabAnimation(frontTab: TabView, behindTab: TabView) {
+
         let tabSwitchAnimator = TabSwitchAnimator()
+        let zPosition: [CGFloat] = [50, 100]
+        let xPosition = CGPoint(x: 200, y: 0)
+        let xPositionReversed = CGPoint(x: -200, y: 0)
+
+        let alpha = (behindTabAlpha, frontTabAlpha)
+        let alphaReversed = (frontTabAlpha, behindTabAlpha)
+
+        let frontAngle = frontTab.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
+        let behindAngle = behindTab.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
+
+        self.view.bringSubviewToFront(frontTab)
+
+        frontTab.alpha = frontTabAlpha
+        behindTab.alpha = behindTabAlpha
+
+        tabSwitchAnimator.getAnimationForTab(view: frontTab,
+                                             angle: frontAngle,
+                                             zPosition: zPosition,
+                                             xPosition: xPosition,
+                                             alphas: alpha)
         
-        tabSwitchAnimator.getAnimationForTab(view: tabViews[0],
-                                             angle:  angles[0] ?? 0,
-                                             zPosition: [50, 100],
-                                             xPosition: 200,
-                                             alpha: [behindTabAlpha, frontTabAlpha])
-        
-        tabSwitchAnimator.getAnimationForTab(view: tabViews[1],
-                                             angle: angles[1] ?? 0,
-                                             zPosition: [100, 50],
-                                             xPosition: -200,
-                                             alpha: [frontTabAlpha, behindTabAlpha])
+        tabSwitchAnimator.getAnimationForTab(view: behindTab,
+                                             angle: behindAngle,
+                                             zPosition: zPosition.reversed(),
+                                             xPosition: xPositionReversed,
+                                             alphas: alphaReversed)
     }
 }

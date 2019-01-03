@@ -32,12 +32,25 @@
                                             <action selector="didPressRightTab:" destination="Kee-v2-vfv" eventType="touchUpInside" id="Y6U-jU-qJI"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-52-ehc">
+                                        <rect key="frame" x="134.66666666666666" y="332" width="86" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ci3-13-Of4"/>
+                                        </constraints>
+                                        <state key="normal" title="Right Button"/>
+                                        <connections>
+                                            <action selector="middleRightButton:" destination="Kee-v2-vfv" eventType="touchUpInside" id="bOp-ta-bC8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Lla-52-ehc" firstAttribute="centerX" secondItem="xU6-Bq-ehg" secondAttribute="centerX" id="E2p-tv-461"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="top" secondItem="xU6-Bq-ehg" secondAttribute="top" id="Q2q-vh-xp2"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" multiplier="0.5" id="SLS-BL-CMN"/>
                                     <constraint firstAttribute="trailing" secondItem="zuV-Cw-b9b" secondAttribute="trailing" id="StE-6V-eYf"/>
+                                    <constraint firstItem="Lla-52-ehc" firstAttribute="centerY" secondItem="xU6-Bq-ehg" secondAttribute="centerY" id="vbp-ZD-NFC"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="cMf-nT-Akf"/>
                                 <userDefinedRuntimeAttributes>
@@ -71,12 +84,25 @@
                                             <action selector="didPressLeftTab:" destination="Kee-v2-vfv" eventType="touchUpInside" id="82p-II-P34"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-zr-6OC">
+                                        <rect key="frame" x="139" y="332" width="77" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="7da-nb-oTe"/>
+                                        </constraints>
+                                        <state key="normal" title="Left Button"/>
+                                        <connections>
+                                            <action selector="middleLeftButton:" destination="Kee-v2-vfv" eventType="touchUpInside" id="Smi-zB-rLt"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" multiplier="0.5" id="06G-UV-N1U"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="top" secondItem="A6i-Fv-t9G" secondAttribute="top" id="8PU-b3-ZoK"/>
+                                    <constraint firstItem="rLk-zr-6OC" firstAttribute="centerY" secondItem="A6i-Fv-t9G" secondAttribute="centerY" id="FAo-lT-EKU"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="leading" secondItem="A6i-Fv-t9G" secondAttribute="leading" id="P5G-7G-Vr1"/>
+                                    <constraint firstItem="rLk-zr-6OC" firstAttribute="centerX" secondItem="A6i-Fv-t9G" secondAttribute="centerX" id="bg7-9z-5hX"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

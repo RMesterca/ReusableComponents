@@ -85,8 +85,8 @@
 			children = (
 				04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */,
 				0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */,
-				0464CD8821DCC09A00F7B87F /* TabBar.swift */,
 				04122E5C21CA6EBA002A70A1 /* TabView.swift */,
+				0464CD8821DCC09A00F7B87F /* TabBar.swift */,
 			);
 			path = TabSwitcher;
 			sourceTree = "<group>";
