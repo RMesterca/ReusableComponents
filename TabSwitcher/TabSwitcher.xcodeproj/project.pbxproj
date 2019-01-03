@@ -18,6 +18,7 @@
 		045D992B21CAB14F00ACFB57 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992A21CAB14F00ACFB57 /* StoryboardName.swift */; };
 		045D992D21CAB16600ACFB57 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992C21CAB16600ACFB57 /* StoryboardIdentifier.swift */; };
 		0464CD8921DCC09A00F7B87F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD8821DCC09A00F7B87F /* TabBar.swift */; };
+		0464CD8B21DE11A200F7B87F /* TabSwitchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		045D992A21CAB14F00ACFB57 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		045D992C21CAB16600ACFB57 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		0464CD8821DCC09A00F7B87F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSwitchAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */,
+				0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */,
 				0464CD8821DCC09A00F7B87F /* TabBar.swift */,
 				04122E5C21CA6EBA002A70A1 /* TabView.swift */,
 			);
@@ -176,6 +179,7 @@
 				045D992D21CAB16600ACFB57 /* StoryboardIdentifier.swift in Sources */,
 				04122E5621CA5E36002A70A1 /* TabSwitcherViewController.swift in Sources */,
 				04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */,
+				0464CD8B21DE11A200F7B87F /* TabSwitchAnimator.swift in Sources */,
 				04122E3F21CA59ED002A70A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
