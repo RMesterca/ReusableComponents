@@ -27,11 +27,7 @@ class TabSwitcherViewController: UIViewController {
         
         setupInitialTabState()
     }
-    
-    @IBAction func middleRightButton(_ sender: Any) {
-        print("middle right")
 
-    }
     //MARK: Actions
     @IBAction func didPressLeftTab(_ sender: Any) {
         print("left")
@@ -39,27 +35,33 @@ class TabSwitcherViewController: UIViewController {
         scissorTabAnimation(frontTab: leftTabView, behindTab: rightTabView)
     }
 
-    @IBAction func middleLeftButton(_ sender: Any) {
-        print("middle left")
-    }
     @IBAction func didPressRightTab(_ sender: Any) {
         print("right")
         toggleActiveButtons()
         scissorTabAnimation(frontTab: rightTabView, behindTab: leftTabView)
     }
 
-    //MARK: Methods
-    fileprivate func toggleActiveButtons() {
-        leftButton.isUserInteractionEnabled.toggle()
-        rightButton.isUserInteractionEnabled.toggle()
+    @IBAction func middleLeftButton(_ sender: Any) {
+        print("middle left")
     }
 
+    @IBAction func middleRightButton(_ sender: Any) {
+        print("middle right")
+
+    }
+
+    //MARK: Methods
     fileprivate func setupInitialTabState() {
         leftTabView.alpha = frontTabAlpha
         rightTabView.alpha = behindTabAlpha
 
         leftButton.isUserInteractionEnabled = false
         rightButton.isUserInteractionEnabled = true
+    }
+
+    fileprivate func toggleActiveButtons() {
+        leftButton.isUserInteractionEnabled.toggle()
+        rightButton.isUserInteractionEnabled.toggle()
     }
 }
 
@@ -84,16 +86,36 @@ extension TabSwitcherViewController {
         frontTab.alpha = frontTabAlpha
         behindTab.alpha = behindTabAlpha
 
-        tabSwitchAnimator.getAnimationForTab(view: frontTab,
-                                             angle: frontAngle,
-                                             zPosition: zPosition,
-                                             xyPosition: xyPosition,
-                                             alphas: alpha)
+        let frontAnimation = tabSwitchAnimator.getAnimationForTab(
+            view: frontTab,
+            angle: frontAngle,
+            zPosition: zPosition,
+            xyPosition: xyPosition,
+            alphas: alpha)
         
-        tabSwitchAnimator.getAnimationForTab(view: behindTab,
-                                             angle: behindAngle,
-                                             zPosition: zPosition.reversed(),
-                                             xyPosition: xyPositionReversed,
-                                             alphas: alphaReversed)
+        let behindAnimation = tabSwitchAnimator.getAnimationForTab(
+            view: behindTab,
+            angle: behindAngle,
+            zPosition: zPosition.reversed(),
+            xyPosition: xyPositionReversed,
+            alphas: alphaReversed)
+
+        frontAnimation.delegate = self
+        behindAnimation.delegate = self
+
+        frontTab.layer.add(frontAnimation, forKey: "viewAnimation")
+        behindTab.layer.add(behindAnimation, forKey: "viewAnimation")
+    }
+}
+
+extension TabSwitcherViewController: CAAnimationDelegate {
+    func animationDidStart(_ anim: CAAnimation) {
+        leftTabView.isUserInteractionEnabled = false
+        rightTabView.isUserInteractionEnabled = false
+    }
+
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        leftTabView.isUserInteractionEnabled = flag
+        rightTabView.isUserInteractionEnabled = flag
     }
 }

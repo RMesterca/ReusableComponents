@@ -11,38 +11,38 @@ import UIKit
 
 class TabSwitchAnimator {
 
-    private var animateDuration: TimeInterval = 1
+    private var animateDuration: TimeInterval = 0.4
     
     func getAnimationForTab(
         view: TabView,
         angle: CGFloat,
         zPosition: [CGFloat],
         xyPosition: CGPoint,
-        alphas: (CGFloat, CGFloat)) {
+        alphas: (CGFloat, CGFloat)) -> CAAnimation {
 
-        if view.isLeftTabView {
-//            view.getRotationPoint(rotationPoint: CGPoint(x: 0, y: 0))
-//            view.setAnchorPoint(CGPoint(x: 0, y: 0))
-        } else {
-//            view.getRotationPoint(rotationPoint: CGPoint(x: view.bounds.width, y: 0))
-//            view.setAnchorPoint(CGPoint(x: 1, y: 0))
-        }
+        let animation = createGroupAnimation(
+            angle: angle,
+            zPosition: zPosition,
+            xyPosition: xyPosition,
+            alphas: alphas)
 
-        let animation = createGroupAnimation(angle: angle, zPosition: zPosition, xyPosition: xyPosition, alphas: alphas)
         animation.fillMode = CAMediaTimingFillMode.removed
         animation.isRemovedOnCompletion = true
 
-        view.layer.add(animation, forKey: "viewAnimation")
+        return animation
     }
 }
 
 extension TabSwitchAnimator {
 
-    fileprivate func createGroupAnimation(angle: CGFloat, zPosition: [CGFloat], xyPosition: CGPoint, alphas: (CGFloat, CGFloat)) -> CAAnimationGroup {
-        let hTranslateAnimation = createHorizontalTranslateAnimation(xPosition: xyPosition)
-        let vTranslateAnimation = createVerticalTranslateAnimation(yPosition: xyPosition)
+    fileprivate func createGroupAnimation(
+        angle: CGFloat,
+        zPosition: [CGFloat],
+        xyPosition: CGPoint,
+        alphas: (CGFloat, CGFloat)) -> CAAnimationGroup {
 
-
+        let horizontalTranslateAnimation = createHorizontalTranslateAnimation(xPosition: xyPosition)
+        let verticalTranslateAnimation = createVerticalTranslateAnimation(yPosition: xyPosition)
         let rotationAnimation = createRotationAnimation(angle: angle)
         let positionAnimation = createPositionAnimation(zPosition: zPosition)
         let opacityAnimation = createOpacityAnimation(alphas: alphas)
@@ -50,8 +50,8 @@ extension TabSwitchAnimator {
         let groupAnimation = CAAnimationGroup()
         
         groupAnimation.duration = animateDuration
-        groupAnimation.animations = [hTranslateAnimation,
-                                     vTranslateAnimation,
+        groupAnimation.animations = [horizontalTranslateAnimation,
+                                     verticalTranslateAnimation,
                                      rotationAnimation,
                                      positionAnimation,
                                      opacityAnimation]
@@ -62,8 +62,11 @@ extension TabSwitchAnimator {
     fileprivate func createHorizontalTranslateAnimation(xPosition: CGPoint) -> CAKeyframeAnimation {
         let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         translateAnimation.values = [0, xPosition.x, 0]
-        translateAnimation.keyTimes = [0, 0.7, 1]
-        translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        translateAnimation.keyTimes = [0, 0.5, 1]
+        translateAnimation.timingFunctions = [
+            CAMediaTimingFunction(name: .easeOut),
+            CAMediaTimingFunction(name: .easeInEaseOut)
+        ]
 
         return translateAnimation
     }
@@ -72,8 +75,7 @@ extension TabSwitchAnimator {
         let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
         translateAnimation.values = [0, yPosition.y, 0]
         translateAnimation.keyTimes = [0, 0.7, 1]
-        translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut
-        )
+        translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
 
         return translateAnimation
     }
@@ -91,7 +93,7 @@ extension TabSwitchAnimator {
         let rotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
         rotationAnimation.values = [0, angle, 0]
         rotationAnimation.keyTimes = [0.01, 0.7, 1]
-        rotationAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
 
         return rotationAnimation
     }
@@ -105,32 +107,3 @@ extension TabSwitchAnimator {
         return opacityAnimation
     }
 }
-
-//extension UIView {
-//    func setAnchorPoint(_ point: CGPoint) {
-//        let oldOrigin = frame.origin
-//        layer.anchorPoint = point
-//        let newOrigin = frame.origin
-//
-//        let transition = CGPoint(x: newOrigin.x - oldOrigin.x, y: newOrigin.y - oldOrigin.y)
-//
-//        self.layer.position.x += transition.x
-//        self.layer.position.y += transition.y
-////        self.center = CGPoint(x: center.x - transition.x, y: center.y - transition.y)
-//    }
-//
-//    func getRotationPoint(rotationPoint: CGPoint) {
-//
-//        let minX = self.frame.minX
-//        let minY = self.frame.minY
-//        let width = self.frame.width
-//        let height = self.frame.height
-//
-//        let anchorPoint = CGPoint(x: (rotationPoint.x - minX)/width, y:  (rotationPoint.y - minY)/height)
-//
-//
-//        self.layer.anchorPoint = anchorPoint
-//        self.layer.position = rotationPoint
-//
-//    }
-//}
