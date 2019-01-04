@@ -110,6 +110,10 @@ extension TabSwitchAnimator {
         positionAnimation.values = zPosition
         positionAnimation.duration = animateDuration
         positionAnimation.keyTimes = [0, 0.5, 1]
+        positionAnimation.timingFunctions = [
+            CAMediaTimingFunction(name: .easeOut),
+            CAMediaTimingFunction(name: .easeInEaseOut)
+        ]
 
         return positionAnimation
     }
@@ -117,8 +121,11 @@ extension TabSwitchAnimator {
     fileprivate func createRotationAnimation(angle: CGFloat) -> CAKeyframeAnimation {
         let rotationAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
         rotationAnimation.values = [0, angle, 0]
-        rotationAnimation.keyTimes = [0.01, 0.7, 1]
-        rotationAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        rotationAnimation.keyTimes = [0.01, 0.5, 1]
+        rotationAnimation.timingFunctions = [
+            CAMediaTimingFunction(name: .easeOut),
+            CAMediaTimingFunction(name: .easeInEaseOut)
+        ]
 
         return rotationAnimation
     }
@@ -126,7 +133,7 @@ extension TabSwitchAnimator {
     fileprivate func createOpacityAnimation(alphas: (CGFloat, CGFloat)) -> CAKeyframeAnimation {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.values = [alphas.0, alphas.1]
-        opacityAnimation.keyTimes = [0, 0.7]
+        opacityAnimation.keyTimes = [0, 0.5]
         opacityAnimation.timingFunctions = [
             CAMediaTimingFunction(name: .easeOut),
             CAMediaTimingFunction(name: .easeInEaseOut)

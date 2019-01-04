@@ -78,7 +78,7 @@ extension TabSwitcherViewController {
     }
 
     fileprivate func getTabTitle(completion: (String) -> Void) {
-        
+
     }
 }
 
