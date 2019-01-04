@@ -21,18 +21,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-Bq-ehg" userLabel="Right Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
                                 <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xfm-Ei-r6z">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-NM-YJ2">
                                         <rect key="frame" x="0.0" y="70" width="355" height="664"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="T9i-lT-dMd">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="664"/>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="T9i-lT-dMd" firstAttribute="height" secondItem="Xfm-Ei-r6z" secondAttribute="height" id="fdm-22-SJB"/>
-                                            <constraint firstItem="T9i-lT-dMd" firstAttribute="width" secondItem="Xfm-Ei-r6z" secondAttribute="width" id="kE0-rI-g7e"/>
-                                        </constraints>
-                                    </stackView>
+                                    </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-Cw-b9b">
                                         <rect key="frame" x="177.66666666666663" y="0.0" width="177.33333333333337" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,30 +35,17 @@
                                             <action selector="didPressRightTab:" destination="Kee-v2-vfv" eventType="touchUpInside" id="Y6U-jU-qJI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-52-ehc">
-                                        <rect key="frame" x="134.66666666666666" y="387" width="86" height="30"/>
-                                        <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Right Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="middleRightButton:" destination="Kee-v2-vfv" eventType="touchUpInside" id="bOp-ta-bC8"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Xfm-Ei-r6z" firstAttribute="centerX" secondItem="xU6-Bq-ehg" secondAttribute="centerX" id="1le-iQ-dC3"/>
+                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="height" secondItem="xU6-Bq-ehg" secondAttribute="height" constant="-70" id="3UD-Mv-vGU"/>
+                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" id="OD8-PF-qFg"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="top" secondItem="xU6-Bq-ehg" secondAttribute="top" id="Q2q-vh-xp2"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" multiplier="0.5" id="SLS-BL-CMN"/>
                                     <constraint firstAttribute="trailing" secondItem="zuV-Cw-b9b" secondAttribute="trailing" id="StE-6V-eYf"/>
-                                    <constraint firstItem="Lla-52-ehc" firstAttribute="centerX" secondItem="xU6-Bq-ehg" secondAttribute="centerX" id="a6l-a5-poe"/>
-                                    <constraint firstItem="Xfm-Ei-r6z" firstAttribute="height" secondItem="xU6-Bq-ehg" secondAttribute="height" constant="-70" id="cPE-ax-Sjs"/>
-                                    <constraint firstItem="Xfm-Ei-r6z" firstAttribute="centerY" secondItem="xU6-Bq-ehg" secondAttribute="centerY" constant="35" id="jbE-pR-Zyl"/>
-                                    <constraint firstItem="Lla-52-ehc" firstAttribute="centerY" secondItem="xU6-Bq-ehg" secondAttribute="centerY" constant="35" id="kpT-tm-FiB"/>
-                                    <constraint firstItem="Xfm-Ei-r6z" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" id="pxI-Yd-lnY"/>
+                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="centerY" secondItem="xU6-Bq-ehg" secondAttribute="centerY" constant="35" id="bwC-4p-2fW"/>
+                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="centerX" secondItem="xU6-Bq-ehg" secondAttribute="centerX" id="xyK-tV-LCw"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="cMf-nT-Akf"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -88,18 +66,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6i-Fv-t9G" userLabel="Left Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
                                 <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uLY-aE-GOm">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-uD-WsE">
                                         <rect key="frame" x="0.0" y="70" width="355" height="664"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_App Icon" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-3s-4fn">
-                                                <rect key="frame" x="0.0" y="0.0" width="355" height="664"/>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="0g3-3s-4fn" firstAttribute="height" secondItem="uLY-aE-GOm" secondAttribute="height" id="419-HI-bZH"/>
-                                            <constraint firstItem="0g3-3s-4fn" firstAttribute="width" secondItem="uLY-aE-GOm" secondAttribute="width" id="lmJ-5I-6Qo"/>
-                                        </constraints>
-                                    </stackView>
+                                    </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-dP-a9y">
                                         <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,28 +80,16 @@
                                             <action selector="didPressLeftTab:" destination="Kee-v2-vfv" eventType="touchUpInside" id="82p-II-P34"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-zr-6OC">
-                                        <rect key="frame" x="139" y="387" width="77" height="30"/>
-                                        <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Left Button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="middleLeftButton:" destination="Kee-v2-vfv" eventType="touchUpInside" id="Smi-zB-rLt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" multiplier="0.5" id="06G-UV-N1U"/>
-                                    <constraint firstItem="uLY-aE-GOm" firstAttribute="height" secondItem="A6i-Fv-t9G" secondAttribute="height" constant="-70" id="1cI-4d-OXH"/>
+                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="centerY" secondItem="A6i-Fv-t9G" secondAttribute="centerY" constant="35" id="1dU-MD-8Q9"/>
+                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="centerX" secondItem="A6i-Fv-t9G" secondAttribute="centerX" id="4Mf-4f-7VN"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="top" secondItem="A6i-Fv-t9G" secondAttribute="top" id="8PU-b3-ZoK"/>
-                                    <constraint firstItem="rLk-zr-6OC" firstAttribute="centerX" secondItem="A6i-Fv-t9G" secondAttribute="centerX" id="8fU-zM-JSA"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="leading" secondItem="A6i-Fv-t9G" secondAttribute="leading" id="P5G-7G-Vr1"/>
-                                    <constraint firstItem="uLY-aE-GOm" firstAttribute="centerX" secondItem="A6i-Fv-t9G" secondAttribute="centerX" id="Pte-Ag-BlW"/>
-                                    <constraint firstItem="rLk-zr-6OC" firstAttribute="centerY" secondItem="A6i-Fv-t9G" secondAttribute="centerY" constant="35" id="WrK-F0-9mD"/>
-                                    <constraint firstItem="uLY-aE-GOm" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" id="Wvc-iv-Ru6"/>
-                                    <constraint firstItem="uLY-aE-GOm" firstAttribute="centerY" secondItem="A6i-Fv-t9G" secondAttribute="centerY" constant="35" id="Zr3-HQ-JKV"/>
+                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="height" secondItem="A6i-Fv-t9G" secondAttribute="height" constant="-70" id="lRh-h0-cDG"/>
+                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" id="pgp-CG-tgZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -178,8 +135,4 @@
             <point key="canvasLocation" x="-751" y="-762"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="0_App Icon" width="500" height="500"/>
-        <image name="image" width="1280" height="1521"/>
-    </resources>
 </document>

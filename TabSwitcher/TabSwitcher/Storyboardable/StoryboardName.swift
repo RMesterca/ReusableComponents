@@ -10,4 +10,6 @@ import Foundation
 
 enum StoryboardName: String {
     case TabSwitcher
+    case LeftVC
+    case RightVC
 }

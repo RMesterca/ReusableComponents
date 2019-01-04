@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Left View Controller-->
+        <scene sceneID="jSe-9J-hka">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ByS-tb-QCk" customClass="LeftViewController" customModule="TabSwitcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fTy-n3-G0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hhl-FR-7t2">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="UsN-Su-6FC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-w3-lqK">
+                                <rect key="frame" x="137.5" y="318.5" width="100" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UFH-Jy-0tG"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="middleLeftButton:" destination="ByS-tb-QCk" eventType="touchUpInside" id="04d-4i-8SP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hhl-FR-7t2" firstAttribute="centerY" secondItem="485-pX-vON" secondAttribute="centerY" id="2cX-8X-3vN"/>
+                            <constraint firstItem="xv2-w3-lqK" firstAttribute="centerY" secondItem="fTy-n3-G0Y" secondAttribute="centerY" id="ALj-2L-xVl"/>
+                            <constraint firstItem="hhl-FR-7t2" firstAttribute="centerX" secondItem="485-pX-vON" secondAttribute="centerX" id="NqY-h9-kzg"/>
+                            <constraint firstItem="xv2-w3-lqK" firstAttribute="centerX" secondItem="fTy-n3-G0Y" secondAttribute="centerX" id="kOI-aU-pWr"/>
+                            <constraint firstItem="hhl-FR-7t2" firstAttribute="width" secondItem="fTy-n3-G0Y" secondAttribute="width" id="uTc-vN-y3o"/>
+                            <constraint firstItem="hhl-FR-7t2" firstAttribute="height" secondItem="fTy-n3-G0Y" secondAttribute="height" id="vUR-Kx-ntY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="485-pX-vON"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBN-YT-uAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image" width="1280" height="1521"/>
+    </resources>
+</document>

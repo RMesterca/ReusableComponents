@@ -32,25 +32,19 @@ class TabSwitcherViewController: UIViewController {
     @IBAction func didPressLeftTab(_ sender: Any) {
         print("left")
         toggleActiveButtons()
-        scissorTabAnimation(frontTab: leftTabView, behindTab: rightTabView)
+        scissorTabAnimation(tabToFront: leftTabView, tabToBack: rightTabView)
     }
 
     @IBAction func didPressRightTab(_ sender: Any) {
         print("right")
         toggleActiveButtons()
-        scissorTabAnimation(frontTab: rightTabView, behindTab: leftTabView)
+        scissorTabAnimation(tabToFront: rightTabView, tabToBack: leftTabView)
     }
+}
 
-    @IBAction func middleLeftButton(_ sender: Any) {
-        print("middle left")
-    }
+//MARK: Methods
+extension TabSwitcherViewController {
 
-    @IBAction func middleRightButton(_ sender: Any) {
-        print("middle right")
-
-    }
-
-    //MARK: Methods
     fileprivate func setupInitialTabState() {
         leftTabView.alpha = frontTabAlpha
         rightTabView.alpha = behindTabAlpha
@@ -65,49 +59,54 @@ class TabSwitcherViewController: UIViewController {
     }
 }
 
-//MARK: Container View Helper Methods
+//MARK: Tab Switch Animation Methods
 extension TabSwitcherViewController {
-    
-    fileprivate func scissorTabAnimation(frontTab: TabView, behindTab: TabView) {
 
-        let tabSwitchAnimator = TabSwitchAnimator()
+    fileprivate func scissorTabAnimation(tabToFront: TabView, tabToBack: TabView) {
+
         let zPosition: [CGFloat] = [50, 100]
-        let xyPosition = CGPoint(x: 200, y: -20)
-        let xyPositionReversed = CGPoint(x: -200, y: -20)
+
+        let xyPositionFront = tabToFront.isLeftTabView ? CGPoint(x: -200, y: -20) : CGPoint(x: 200, y: -20)
+        let xyPositionBack = tabToBack.isLeftTabView ? CGPoint(x: -200, y: -20) : CGPoint(x: 200, y: -20)
 
         let alpha = (behindTabAlpha, frontTabAlpha)
         let alphaReversed = (frontTabAlpha, behindTabAlpha)
 
-        let frontAngle = frontTab.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
-        let behindAngle = behindTab.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
+        let frontAngle = tabToFront.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
+        let behindAngle = tabToBack.isLeftTabView ? CGFloat.pi/8 : CGFloat.pi/(-8)
 
-        self.view.bringSubviewToFront(frontTab)
+        switchTabs(tabToFront, tabToBack)
 
-        frontTab.alpha = frontTabAlpha
-        behindTab.alpha = behindTabAlpha
+        let tabSwitchAnimator = TabSwitchAnimator()
 
         let frontAnimation = tabSwitchAnimator.getAnimationForTab(
-            view: frontTab,
             angle: frontAngle,
             zPosition: zPosition,
-            xyPosition: xyPosition,
+            xyPosition: xyPositionFront,
             alphas: alpha)
-        
+
         let behindAnimation = tabSwitchAnimator.getAnimationForTab(
-            view: behindTab,
             angle: behindAngle,
             zPosition: zPosition.reversed(),
-            xyPosition: xyPositionReversed,
+            xyPosition: xyPositionBack,
             alphas: alphaReversed)
 
         frontAnimation.delegate = self
         behindAnimation.delegate = self
 
-        frontTab.layer.add(frontAnimation, forKey: "viewAnimation")
-        behindTab.layer.add(behindAnimation, forKey: "viewAnimation")
+        tabToFront.layer.add(frontAnimation, forKey: "viewAnimation")
+        tabToBack.layer.add(behindAnimation, forKey: "viewAnimation")
+    }
+
+    fileprivate func switchTabs(_ tabToFront: TabView, _ tabToBack: TabView) {
+        self.view.bringSubviewToFront(tabToFront)
+
+        tabToFront.alpha = frontTabAlpha
+        tabToBack.alpha = behindTabAlpha
     }
 }
 
+//MARK: Tab Switch Animation Delegate
 extension TabSwitcherViewController: CAAnimationDelegate {
     func animationDidStart(_ anim: CAAnimation) {
         leftTabView.isUserInteractionEnabled = false

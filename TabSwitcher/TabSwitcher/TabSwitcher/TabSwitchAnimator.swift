@@ -9,12 +9,33 @@
 import Foundation
 import UIKit
 
+struct TabAnimationModel {
+    let angle: CGFloat
+    let zPosition: [CGFloat]
+    let xyPosition: CGPoint
+    let alphas: (CGFloat, CGFloat)
+}
+
+//struct LeftTabData {
+//    func getLeftTabModel() -> TabAnimationModel {
+//        let tabModel = TabAnimationModel(
+//            angle: <#T##CGFloat#>,
+//            zPosition: <#T##[CGFloat]#>,
+//            xyPosition: <#T##CGPoint#>,
+//            alphas: <#T##(CGFloat, CGFloat)#>)
+//    }
+//
+//}
+
+struct RightTabData {
+
+}
+
 class TabSwitchAnimator {
 
     private var animateDuration: TimeInterval = 0.4
-    
+
     func getAnimationForTab(
-        view: TabView,
         angle: CGFloat,
         zPosition: [CGFloat],
         xyPosition: CGPoint,
@@ -41,10 +62,11 @@ extension TabSwitchAnimator {
         xyPosition: CGPoint,
         alphas: (CGFloat, CGFloat)) -> CAAnimationGroup {
 
-        let horizontalTranslateAnimation = createHorizontalTranslateAnimation(xPosition: xyPosition)
-        let verticalTranslateAnimation = createVerticalTranslateAnimation(yPosition: xyPosition)
-        let rotationAnimation = createRotationAnimation(angle: angle)
+        let horizontalTranslateAnimation = createHorizontalTranslateAnimation(xPosition: xyPosition.x)
+        let verticalTranslateAnimation = createVerticalTranslateAnimation(yPosition: xyPosition.y)
         let positionAnimation = createPositionAnimation(zPosition: zPosition)
+
+        let rotationAnimation = createRotationAnimation(angle: angle)
         let opacityAnimation = createOpacityAnimation(alphas: alphas)
 
         let groupAnimation = CAAnimationGroup()
@@ -59,9 +81,9 @@ extension TabSwitchAnimator {
         return groupAnimation
     }
 
-    fileprivate func createHorizontalTranslateAnimation(xPosition: CGPoint) -> CAKeyframeAnimation {
+    fileprivate func createHorizontalTranslateAnimation(xPosition: CGFloat) -> CAKeyframeAnimation {
         let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        translateAnimation.values = [0, xPosition.x, 0]
+        translateAnimation.values = [0, xPosition, 0]
         translateAnimation.keyTimes = [0, 0.5, 1]
         translateAnimation.timingFunctions = [
             CAMediaTimingFunction(name: .easeOut),
@@ -71,11 +93,14 @@ extension TabSwitchAnimator {
         return translateAnimation
     }
 
-    fileprivate func createVerticalTranslateAnimation(yPosition: CGPoint) -> CAKeyframeAnimation {
+    fileprivate func createVerticalTranslateAnimation(yPosition: CGFloat) -> CAKeyframeAnimation {
         let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
-        translateAnimation.values = [0, yPosition.y, 0]
-        translateAnimation.keyTimes = [0, 0.7, 1]
-        translateAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        translateAnimation.values = [0, yPosition, 0]
+        translateAnimation.keyTimes = [0, 0.5, 1]
+        translateAnimation.timingFunctions = [
+            CAMediaTimingFunction(name: .easeOut),
+            CAMediaTimingFunction(name: .easeInEaseOut)
+        ]
 
         return translateAnimation
     }
@@ -84,7 +109,7 @@ extension TabSwitchAnimator {
         let positionAnimation = CAKeyframeAnimation(keyPath: "transform.translation.z")
         positionAnimation.values = zPosition
         positionAnimation.duration = animateDuration
-        positionAnimation.keyTimes = [0, 0.7, 1]
+        positionAnimation.keyTimes = [0, 0.5, 1]
 
         return positionAnimation
     }
@@ -102,7 +127,10 @@ extension TabSwitchAnimator {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.values = [alphas.0, alphas.1]
         opacityAnimation.keyTimes = [0, 0.7]
-        opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        opacityAnimation.timingFunctions = [
+            CAMediaTimingFunction(name: .easeOut),
+            CAMediaTimingFunction(name: .easeInEaseOut)
+        ]
 
         return opacityAnimation
     }
