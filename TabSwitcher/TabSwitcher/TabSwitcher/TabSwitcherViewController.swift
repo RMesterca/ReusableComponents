@@ -8,24 +8,37 @@
 
 import UIKit
 
+protocol TabNaming {
+    func titleForLabel(_ completion: (String) -> Void)
+}
+
 class TabSwitcherViewController: UIViewController {
     
     //MARK: Outlets
     @IBOutlet weak var leftTabView: TabView!
     @IBOutlet weak var rightTabView: TabView!
+    
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet var tabViewBottomContraints: [NSLayoutConstraint]!
-    
+
     //MARK: Properties
     private var behindTabAlpha: CGFloat = 0.5
     private var frontTabAlpha: CGFloat = 1
+
+    private lazy var leftTabVC: UIViewController = {
+        return LeftViewController.instantiate()
+    }()
+
+    private lazy var rightTabVC: UIViewController = {
+        return RightViewController.instantiate()
+    }()
 
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupInitialTabState()
+        addChildVCToTabs()
     }
 
     //MARK: Actions
@@ -51,6 +64,11 @@ extension TabSwitcherViewController {
 
         leftButton.isUserInteractionEnabled = false
         rightButton.isUserInteractionEnabled = true
+    }
+
+    fileprivate func addChildVCToTabs() {
+        ContainerViewEmbedder.add(childVC: leftTabVC, in: self, to: leftTabView.containerView)
+        ContainerViewEmbedder.add(childVC: rightTabVC, in: self, to: rightTabView.containerView)
     }
 
     fileprivate func toggleActiveButtons() {

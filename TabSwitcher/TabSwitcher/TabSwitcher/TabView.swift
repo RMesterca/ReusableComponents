@@ -78,6 +78,17 @@ class TabView: UIView {
             cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
     }
 
+    lazy var containerView = UIView()
+
+    lazy var containerViewFrame: CGRect = {
+        return CGRect(
+            x: 0,
+            y: tabHeight,
+            width: self.frame.size.width,
+            height: self.frame.size.height
+        )
+    }()
+
     //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,11 +103,19 @@ class TabView: UIView {
     //MARK: Methods
     private func setup() {
         self.shapeLayer.fillColor = self.fillColor.cgColor
+        self.addSubview(containerView)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        setViewLayerBezierPath()
+
+        containerView.frame = containerViewFrame
+//        containerView.backgroundColor = se
+    }
+
+    fileprivate func setViewLayerBezierPath() {
         let tabPath = UIBezierPath()
         isLeftTabView ? tabPath.append(leftLabelRoundedRect) : tabPath.append(rightLabelRoundedRect)
         tabPath.append(roundedRect)

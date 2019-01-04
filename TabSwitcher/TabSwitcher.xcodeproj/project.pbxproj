@@ -22,6 +22,7 @@
 		0464CD8F21DE73D400F7B87F /* RightVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0464CD8E21DE73D400F7B87F /* RightVC.storyboard */; };
 		0464CD9221DE743C00F7B87F /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD9121DE743C00F7B87F /* LeftViewController.swift */; };
 		0464CD9421DE744500F7B87F /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD9321DE744500F7B87F /* RightViewController.swift */; };
+		0464CD9621DF484000F7B87F /* ContainerViewEmbedder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD9521DF484000F7B87F /* ContainerViewEmbedder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0464CD8E21DE73D400F7B87F /* RightVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightVC.storyboard; sourceTree = "<group>"; };
 		0464CD9121DE743C00F7B87F /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		0464CD9321DE744500F7B87F /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		0464CD9521DF484000F7B87F /* ContainerViewEmbedder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewEmbedder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				0464CD8C21DE73C000F7B87F /* LeftVC.storyboard */,
 				0464CD8E21DE73D400F7B87F /* RightVC.storyboard */,
 				045D992921CAB13800ACFB57 /* Storyboardable */,
+				0464CD9521DF484000F7B87F /* ContainerViewEmbedder.swift */,
 				04122E5B21CA60E3002A70A1 /* TabSwitcher */,
 				0464CD9021DE740400F7B87F /* Container View Controllers */,
 				04122E4821CA59F0002A70A1 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 				045D992821CAB05100ACFB57 /* Storyboardable.swift in Sources */,
 				0464CD9421DE744500F7B87F /* RightViewController.swift in Sources */,
 				0464CD9221DE743C00F7B87F /* LeftViewController.swift in Sources */,
+				0464CD9621DF484000F7B87F /* ContainerViewEmbedder.swift in Sources */,
 				0464CD8921DCC09A00F7B87F /* TabBar.swift in Sources */,
 				04122E5621CA5E36002A70A1 /* TabSwitcherViewController.swift in Sources */,
 				04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */,

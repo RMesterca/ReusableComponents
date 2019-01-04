@@ -21,9 +21,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-Bq-ehg" userLabel="Right Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
                                 <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2w-NM-YJ2">
-                                        <rect key="frame" x="0.0" y="70" width="355" height="664"/>
-                                    </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-Cw-b9b">
                                         <rect key="frame" x="177.66666666666663" y="0.0" width="177.33333333333337" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,13 +35,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="height" secondItem="xU6-Bq-ehg" secondAttribute="height" constant="-70" id="3UD-Mv-vGU"/>
-                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" id="OD8-PF-qFg"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="top" secondItem="xU6-Bq-ehg" secondAttribute="top" id="Q2q-vh-xp2"/>
                                     <constraint firstItem="zuV-Cw-b9b" firstAttribute="width" secondItem="xU6-Bq-ehg" secondAttribute="width" multiplier="0.5" id="SLS-BL-CMN"/>
                                     <constraint firstAttribute="trailing" secondItem="zuV-Cw-b9b" secondAttribute="trailing" id="StE-6V-eYf"/>
-                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="centerY" secondItem="xU6-Bq-ehg" secondAttribute="centerY" constant="35" id="bwC-4p-2fW"/>
-                                    <constraint firstItem="H2w-NM-YJ2" firstAttribute="centerX" secondItem="xU6-Bq-ehg" secondAttribute="centerX" id="xyK-tV-LCw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,9 +59,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6i-Fv-t9G" userLabel="Left Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
                                 <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFW-uD-WsE">
-                                        <rect key="frame" x="0.0" y="70" width="355" height="664"/>
-                                    </containerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-dP-a9y">
                                         <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,12 +74,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" multiplier="0.5" id="06G-UV-N1U"/>
-                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="centerY" secondItem="A6i-Fv-t9G" secondAttribute="centerY" constant="35" id="1dU-MD-8Q9"/>
-                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="centerX" secondItem="A6i-Fv-t9G" secondAttribute="centerX" id="4Mf-4f-7VN"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="top" secondItem="A6i-Fv-t9G" secondAttribute="top" id="8PU-b3-ZoK"/>
                                     <constraint firstItem="d7h-dP-a9y" firstAttribute="leading" secondItem="A6i-Fv-t9G" secondAttribute="leading" id="P5G-7G-Vr1"/>
-                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="height" secondItem="A6i-Fv-t9G" secondAttribute="height" constant="-70" id="lRh-h0-cDG"/>
-                                    <constraint firstItem="uFW-uD-WsE" firstAttribute="width" secondItem="A6i-Fv-t9G" secondAttribute="width" id="pgp-CG-tgZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -127,7 +113,6 @@
                         <outlet property="leftTabView" destination="A6i-Fv-t9G" id="0n8-Ok-hHA"/>
                         <outlet property="rightButton" destination="zuV-Cw-b9b" id="0Ap-V7-358"/>
                         <outlet property="rightTabView" destination="xU6-Bq-ehg" id="HrW-ta-y70"/>
-                        <outletCollection property="tabViewBottomContraints" destination="Ilg-vG-mx0" collectionClass="NSMutableArray" id="Ro2-gP-5W2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcc-5E-JNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
