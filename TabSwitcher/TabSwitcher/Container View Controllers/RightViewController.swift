@@ -12,6 +12,8 @@ class RightViewController: UIViewController, Storyboardable {
     static var storyboardName: String = StoryboardName.RightVC.rawValue
     static var storyboardIdentifier: String = "RightViewController"
 
+    var titleUpdate: ((String) -> Void)? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -39,6 +39,7 @@ class TabSwitcherViewController: UIViewController {
         
         setupInitialTabState()
         addChildVCToTabs()
+
     }
 
     //MARK: Actions
@@ -74,6 +75,10 @@ extension TabSwitcherViewController {
     fileprivate func toggleActiveButtons() {
         leftButton.isUserInteractionEnabled.toggle()
         rightButton.isUserInteractionEnabled.toggle()
+    }
+
+    fileprivate func getTabTitle(completion: (String) -> Void) {
+        
     }
 }
 

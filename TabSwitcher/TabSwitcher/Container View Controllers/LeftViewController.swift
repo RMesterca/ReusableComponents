@@ -8,9 +8,11 @@
 
 import UIKit
 
-class LeftViewController: UIViewController, Storyboardable {
+class LeftViewController: UIViewController, Storyboardable { 
     static var storyboardName: String = StoryboardName.LeftVC.rawValue
     static var storyboardIdentifier: String = "LeftViewController"
+
+    var titleUpdate: ((String) -> Void)? = nil
 
     @IBAction func middleLeftButton(_ sender: Any) {
         print("middle left")
