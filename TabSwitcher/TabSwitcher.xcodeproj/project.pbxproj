@@ -16,7 +16,6 @@
 		04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122E5C21CA6EBA002A70A1 /* TabView.swift */; };
 		045D992821CAB05100ACFB57 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992721CAB05100ACFB57 /* Storyboardable.swift */; };
 		045D992B21CAB14F00ACFB57 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D992A21CAB14F00ACFB57 /* StoryboardName.swift */; };
-		0464CD8921DCC09A00F7B87F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD8821DCC09A00F7B87F /* TabBar.swift */; };
 		0464CD8B21DE11A200F7B87F /* TabSwitchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */; };
 		0464CD8D21DE73C000F7B87F /* LeftVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0464CD8C21DE73C000F7B87F /* LeftVC.storyboard */; };
 		0464CD8F21DE73D400F7B87F /* RightVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0464CD8E21DE73D400F7B87F /* RightVC.storyboard */; };
@@ -37,7 +36,6 @@
 		04122E5C21CA6EBA002A70A1 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		045D992721CAB05100ACFB57 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		045D992A21CAB14F00ACFB57 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
-		0464CD8821DCC09A00F7B87F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSwitchAnimator.swift; sourceTree = "<group>"; };
 		0464CD8C21DE73C000F7B87F /* LeftVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeftVC.storyboard; sourceTree = "<group>"; };
 		0464CD8E21DE73D400F7B87F /* RightVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightVC.storyboard; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				04122E5521CA5E36002A70A1 /* TabSwitcherViewController.swift */,
 				0464CD8A21DE11A200F7B87F /* TabSwitchAnimator.swift */,
 				04122E5C21CA6EBA002A70A1 /* TabView.swift */,
-				0464CD8821DCC09A00F7B87F /* TabBar.swift */,
 			);
 			path = TabSwitcher;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 				0464CD9421DE744500F7B87F /* RightViewController.swift in Sources */,
 				0464CD9221DE743C00F7B87F /* LeftViewController.swift in Sources */,
 				0464CD9621DF484000F7B87F /* ContainerViewEmbedder.swift in Sources */,
-				0464CD8921DCC09A00F7B87F /* TabBar.swift in Sources */,
 				04122E5621CA5E36002A70A1 /* TabSwitcherViewController.swift in Sources */,
 				04122E5D21CA6EBA002A70A1 /* TabView.swift in Sources */,
 				0464CD8B21DE11A200F7B87F /* TabSwitchAnimator.swift in Sources */,

@@ -40,6 +40,9 @@ class TabSwitcherViewController: UIViewController {
         setupInitialTabState()
         addChildVCToTabs()
 
+        if self.tabBarController != nil {
+            self.leftTabView.tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+        }
     }
 
     //MARK: Actions
@@ -131,6 +134,7 @@ extension TabSwitcherViewController {
 
 //MARK: Tab Switch Animation Delegate
 extension TabSwitcherViewController: CAAnimationDelegate {
+
     func animationDidStart(_ anim: CAAnimation) {
         leftTabView.isUserInteractionEnabled = false
         rightTabView.isUserInteractionEnabled = false

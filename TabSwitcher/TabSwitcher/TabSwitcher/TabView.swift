@@ -44,6 +44,7 @@ class TabView: UIView {
     var shapeLayer: CAShapeLayer {
         return self.layer as! CAShapeLayer
     }
+    var tabBarHeight: CGFloat = 0
     
     var roundedRect: UIBezierPath {
         let frame = CGRect(x: bounds.origin.x,
@@ -102,8 +103,12 @@ class TabView: UIView {
 
     //MARK: Methods
     private func setup() {
+        if let scrollView = self.containerView.subviews.first as? UIScrollView {
+            scrollView.contentInset.bottom = tabBarHeight
+        }
+
         self.shapeLayer.fillColor = self.fillColor.cgColor
-        self.addSubview(containerView)
+//        self.addSubview(containerView)
     }
 
     override func layoutSubviews() {

@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-struct TabAnimationModel {
-    let angle: CGFloat
-    let zPosition: [CGFloat]
-    let xyPosition: CGPoint
-    let alphas: (CGFloat, CGFloat)
-}
-
-//struct LeftTabData {
-//    func getLeftTabModel() -> TabAnimationModel {
-//        let tabModel = TabAnimationModel(
-//            angle: <#T##CGFloat#>,
-//            zPosition: <#T##[CGFloat]#>,
-//            xyPosition: <#T##CGPoint#>,
-//            alphas: <#T##(CGFloat, CGFloat)#>)
-//    }
-//
-//}
-
-struct RightTabData {
-
-}
-
 class TabSwitchAnimator {
 
     private var animateDuration: TimeInterval = 0.4
