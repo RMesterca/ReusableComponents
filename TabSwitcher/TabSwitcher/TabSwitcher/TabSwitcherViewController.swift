@@ -39,10 +39,7 @@ class TabSwitcherViewController: UIViewController {
         
         setupInitialTabState()
         addChildVCToTabs()
-
-        if self.tabBarController != nil {
-            self.leftTabView.tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
-        }
+        getTabTitle()
     }
 
     //MARK: Actions
@@ -80,8 +77,13 @@ extension TabSwitcherViewController {
         rightButton.isUserInteractionEnabled.toggle()
     }
 
-    fileprivate func getTabTitle(completion: (String) -> Void) {
-
+    fileprivate func getTabTitle() {
+        let leftVC = LeftViewController()
+//        leftVC.titleForLabel(leftVC.titleUpdate!)
+        leftVC.titleUpdate = { [weak self] title in
+            print(title)
+            self?.leftButton.setTitle(title, for: .normal)
+        }
     }
 }
 

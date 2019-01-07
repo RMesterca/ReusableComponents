@@ -10,41 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
-        <scene sceneID="Idv-6B-lMP">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="72z-xg-1Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="T0L-tO-2gq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t9F-Cr-V3a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="uCV-Fh-lYu"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="kdC-sJ-mZa"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-1506" y="-1352"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="3PE-iH-GbS">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yQE-dy-mD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="j0d-ni-FOF" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5ZT-aS-LjK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="T0L-tO-2gq" kind="relationship" relationship="viewControllers" id="VwK-rl-qTz"/>
-                        <segue destination="Kee-v2-vfv" kind="relationship" relationship="viewControllers" id="0jw-D5-Feg"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="-2459" y="-1025"/>
-        </scene>
-        <!--Item-->
+        <!--Tab Switcher View Controller-->
         <scene sceneID="s3G-x3-Vf0">
             <objects>
                 <viewController storyboardIdentifier="TabSwitcherViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kee-v2-vfv" customClass="TabSwitcherViewController" customModule="TabSwitcher" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU6-Bq-ehg" userLabel="Right Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
-                                <rect key="frame" x="10" y="44" width="355" height="685"/>
+                                <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuV-Cw-b9b">
                                         <rect key="frame" x="177.66666666666663" y="0.0" width="177.33333333333337" height="70"/>
@@ -91,7 +57,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6i-Fv-t9G" userLabel="Left Tab View" customClass="TabView" customModule="TabSwitcher" customModuleProvider="target">
-                                <rect key="frame" x="10" y="44" width="355" height="685"/>
+                                <rect key="frame" x="10" y="44" width="355" height="734"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-dP-a9y">
                                         <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="70"/>
@@ -142,7 +108,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EUa-l1-5Db"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qPz-4W-jjm"/>
                     <connections>
                         <outlet property="leftButton" destination="d7h-dP-a9y" id="eHc-Ly-ZKw"/>
                         <outlet property="leftTabView" destination="A6i-Fv-t9G" id="0n8-Ok-hHA"/>

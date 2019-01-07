@@ -103,21 +103,14 @@ class TabView: UIView {
 
     //MARK: Methods
     private func setup() {
-        if let scrollView = self.containerView.subviews.first as? UIScrollView {
-            scrollView.contentInset.bottom = tabBarHeight
-        }
-
         self.shapeLayer.fillColor = self.fillColor.cgColor
-//        self.addSubview(containerView)
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
 
         setViewLayerBezierPath()
-
         containerView.frame = containerViewFrame
-//        containerView.backgroundColor = se
     }
 
     fileprivate func setViewLayerBezierPath() {

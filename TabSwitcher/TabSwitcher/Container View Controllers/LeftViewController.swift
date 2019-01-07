@@ -25,6 +25,7 @@ class LeftViewController: UIViewController, Storyboardable {
 
 extension LeftViewController: TabNaming {
     func titleForLabel(_ completion: (String) -> Void) {
-        
-    }
+        let title = "Messages1"
+        titleUpdate?(title)
+    } 
 }
