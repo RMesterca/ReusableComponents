@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LeftViewController: UIViewController, Storyboardable { 
+class LeftViewController: UIViewController, Storyboardable, TabNaming { 
     static var storyboardName: String = StoryboardName.LeftVC.rawValue
     static var storyboardIdentifier: String = "LeftViewController"
 
-    var titleUpdate: ((String) -> Void)? = nil
+    var titleUpdate: ((String) -> Void)? 
 
     @IBAction func middleLeftButton(_ sender: Any) {
         print("middle left")
@@ -21,11 +21,11 @@ class LeftViewController: UIViewController, Storyboardable {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-}
 
-extension LeftViewController: TabNaming {
-    func titleForLabel(_ completion: (String) -> Void) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         let title = "Messages1"
         titleUpdate?(title)
-    } 
+    }
 }

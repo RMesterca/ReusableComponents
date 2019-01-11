@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class ContainerViewEmbedder {
-    class func add(childVC: UIViewController, in parentVC: UIViewController, to containerView: UIView) {
+    class func add(childVC: UIViewController,
+                   in parentVC: UIViewController,
+                   to containerView: UIView) {
+        
         childVC.willMove(toParent: parentVC)
         parentVC.addChild(childVC)
         containerView.addSubview(childVC.view)

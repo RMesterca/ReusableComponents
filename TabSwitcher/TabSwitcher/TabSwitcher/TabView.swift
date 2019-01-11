@@ -104,6 +104,7 @@ class TabView: UIView {
     //MARK: Methods
     private func setup() {
         self.shapeLayer.fillColor = self.fillColor.cgColor
+        self.addSubview(containerView)
     }
 
     override func layoutSubviews() {

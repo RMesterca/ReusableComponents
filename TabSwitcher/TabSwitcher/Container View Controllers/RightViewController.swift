@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RightViewController: UIViewController, Storyboardable {
+class RightViewController: UIViewController, Storyboardable, TabNaming {
     static var storyboardName: String = StoryboardName.RightVC.rawValue
     static var storyboardIdentifier: String = "RightViewController"
 
@@ -19,12 +19,14 @@ class RightViewController: UIViewController, Storyboardable {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let title = "Messages2"
+        titleUpdate?(title)
+    }
+
     @IBAction func middleRightButton(_ sender: Any) {
         print("middle right")
-    }
-}
-
-extension RightViewController: TabNaming {
-    func titleForLabel(_ completion: (String) -> Void) {
     }
 }

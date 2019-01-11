@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TabNaming {
-    func titleForLabel(_ completion: (String) -> Void)
+    var titleUpdate: ((String) -> Void)? { get set }
 }
 
 class TabSwitcherViewController: UIViewController {
@@ -25,11 +25,11 @@ class TabSwitcherViewController: UIViewController {
     private var behindTabAlpha: CGFloat = 0.5
     private var frontTabAlpha: CGFloat = 1
 
-    private lazy var leftTabVC: UIViewController = {
+    private lazy var leftTabVC: LeftViewController = {
         return LeftViewController.instantiate()
     }()
 
-    private lazy var rightTabVC: UIViewController = {
+    private lazy var rightTabVC: RightViewController = {
         return RightViewController.instantiate()
     }()
 
@@ -78,11 +78,14 @@ extension TabSwitcherViewController {
     }
 
     fileprivate func getTabTitle() {
-        let leftVC = LeftViewController()
-//        leftVC.titleForLabel(leftVC.titleUpdate!)
-        leftVC.titleUpdate = { [weak self] title in
+        leftTabVC.titleUpdate = { [weak self] title in
             print(title)
             self?.leftButton.setTitle(title, for: .normal)
+        }
+
+        rightTabVC.titleUpdate = { [weak self] title in
+            print(title)
+            self?.rightButton.setTitle(title, for: .normal)
         }
     }
 }
